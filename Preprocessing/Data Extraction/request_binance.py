@@ -8,7 +8,7 @@ import numpy as np
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 import os
-
+#
 #===================SETTINGS=======================#
 #Check path for Currency and Dates first!
 curreny         = "BTCUSDT"       #BTCUSDT
