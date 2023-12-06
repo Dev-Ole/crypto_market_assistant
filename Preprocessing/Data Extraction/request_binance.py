@@ -17,8 +17,8 @@ end_date        = "2023-11-30"    #BTC until "2023-11-30"
 sample_period   = "D"             #daily
 #==================================================#
 route_path = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-csv_filename = route_path+"Raw_data/"+curreny+"_"+sample_period+".csv"
-foldername = route_path+"Raw_data/"+curreny+"_DL"
+csv_filename = route_path+"/raw_data/"+curreny+"_"+sample_period+"_Binance.csv"
+foldername = route_path+"/raw_data/"+curreny+"_DL"
 
 #Original Path for Browser:
 #https://data.binance.vision/?prefix=data/spot/daily/klines/BTCUSDT/1m/
@@ -109,7 +109,7 @@ else:
 # Clean dataframes ============================================================#
 CSV_df = []
 for csv_file in csv_files:
-  _data = pd.read_csv(csv_file, names=["time", "open", "high", "low", "close", "volume BTC", "close_time","volume USD","num_trades","taker_buy_volume","taker_buy_quote_volume","ignore"], parse_dates=['time'])
+  _data = pd.read_csv(csv_file, names=["time", "open", "high", "low", "close", "volume BTC", "close_time","volume USD","num_trades","taker_buy_volume","taker_buy_quote_volume","ignore"])
 
   #Format and clean data
   _data["time"] = pd.to_datetime(_data["time"], unit="ms")
