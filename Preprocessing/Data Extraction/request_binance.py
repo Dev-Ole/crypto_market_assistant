@@ -113,6 +113,7 @@ for csv_file in csv_files:
 
   #Format and clean data
   _data["time"] = pd.to_datetime(_data["time"], unit="ms")
+  _data = _data.sort_values(by='time')
   _data.set_index("time", inplace=True)
   _data = _data.drop(columns=["close_time", "num_trades", "taker_buy_volume", "taker_buy_quote_volume", "ignore"])
   CSV_df.append(_data)
