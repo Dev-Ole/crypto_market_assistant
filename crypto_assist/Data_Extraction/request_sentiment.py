@@ -1,11 +1,17 @@
 import requests
 import numpy as np
 import pandas as pd
-import time
 import os
 from transformers import BertTokenizer, BertForSequenceClassification
 from transformers import pipeline
 from datetime import datetime, timedelta
+
+#import API Key .envrc
+import os
+from dotenv import load_dotenv
+load_dotenv()
+api_key_senti = os.getenv("API_KEY_SENTI")
+
 
 def sentimental_data():
     #This defines the current day
@@ -42,7 +48,7 @@ def sentimental_data():
             print("✅ Sentimental dataframe is up to date.")
             return
         else:
-            url= f'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=COIN,CRYPTO:BTC&time_from={formatted_last_date}T0000&limit=1000&apikey=LYY7J4L4FM16HORC'
+            url= f'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=COIN,CRYPTO:BTC&time_from={formatted_last_date}T0000&limit=1000&apikey={api_key_senti}'
             r = requests.get(url)
             data = r.json()
 

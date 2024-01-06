@@ -1,9 +1,13 @@
 import requests
-import numpy as np
 import pandas as pd
-import time
 from datetime import datetime, timedelta
 import os
+
+#import API Key .envrc
+import os
+from dotenv import load_dotenv
+load_dotenv()
+api_key_social = os.getenv("API_KEY_SOCIAL")
 
 def check_social_data():
     #This defines the current day
@@ -38,7 +42,7 @@ def check_social_data():
         else:
             print(f'Date frame incomplete fetching {days_to_fetch}')
             #First make a request to cryptocompare API to get the social stats
-            url= f'https://min-api.cryptocompare.com/data/social/coin/histo/day?&coinId=7605&limit={days_to_fetch}&api_key=ec6ccfef0683ed17b8dea49e01c0954abcd030ba0dd27eb704d1c829dead85e6'
+            url= f'https://min-api.cryptocompare.com/data/social/coin/histo/day?&coinId=7605&limit={days_to_fetch}&api_key={api_key_social}'
             r = requests.get(url)
             data = r.json()
 

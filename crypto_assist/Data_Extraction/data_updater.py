@@ -1,7 +1,7 @@
-from request_social_2 import check_social_data
-from request_fearandgreed_2 import fear_and_greed
-from request_sentiment_2 import sentimental_data
-from request_binance_new import chart_data
+from request_social import check_social_data
+from request_fearandgreed import fear_and_greed
+from request_sentiment import sentimental_data
+from request_binance import chart_data
 
 def update_data():
     #Check and update chart data

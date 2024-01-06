@@ -1,17 +1,17 @@
 import requests
+import os
+import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
-import os
 
 def fear_and_greed():
     #This defines the current day
     today = datetime.now().strftime("%Y-%m-%d")
-
     date_format = '%Y-%m-%d'
 
     # Convert the string to a datetime object
     today_date = datetime.strptime(today, date_format)
-
+    
     #Now collect the last date in the csv_file social_number_data
     route_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
