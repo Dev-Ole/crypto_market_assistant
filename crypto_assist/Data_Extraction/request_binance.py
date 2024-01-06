@@ -2,9 +2,7 @@ import os
 import shutil
 import zipfile
 import requests
-import subprocess
 import pandas as pd
-import numpy as np
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
